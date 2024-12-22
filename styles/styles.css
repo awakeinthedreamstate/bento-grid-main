@@ -129,6 +129,9 @@ select {
   transition: transform 280ms ease-in-out;
   color: #57a773;
 }
+#card-one #post-button:hover i {
+  animation: icon 0.2s linear;
+}
 #card-one #post-button i {
   border-radius: 0;
   display: flex;
@@ -171,6 +174,14 @@ select {
   grid-area: card-eight;
 }
 
+@keyframes icon {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(180deg);
+  }
+}
 body {
   display: flex;
   align-items: center;

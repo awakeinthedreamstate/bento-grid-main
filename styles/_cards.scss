@@ -47,6 +47,9 @@ $yellow500: hsl(39, 100%, 71%);
       transform: scale(1.05);
       transition: transform 280ms ease-in-out;
       color: #57a773;
+      i {
+        animation: icon 0.2s linear;
+      }
     }
     i {
       border-radius: 0;
@@ -90,4 +93,13 @@ $yellow500: hsl(39, 100%, 71%);
 
 #card-eight {
   grid-area: card-eight;
+}
+
+@keyframes icon {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(180deg);
+  }
 }
