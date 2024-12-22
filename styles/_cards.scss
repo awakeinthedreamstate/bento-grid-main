@@ -1,0 +1,93 @@
+$purple100: hsl(254, 88%, 90%);
+$purple500: hsl(256, 67%, 59%);
+$yellow100: hsl(31, 66%, 93%);
+$yellow500: hsl(39, 100%, 71%);
+
+.font-weight-one {
+  font-weight: 500;
+}
+
+#card-one {
+  grid-area: card-one;
+  margin-bottom: -64px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: $yellow100;
+  padding-bottom: 1rem;
+  * {
+    border: none;
+  }
+  p {
+    width: 80%;
+    font-size: 1.8rem;
+    line-height: 1.5rem;
+    letter-spacing: -2.5px;
+    position: relative;
+    top: -10%;
+    span {
+      font-style: italic;
+      color: $purple500;
+    }
+  }
+  #post-button {
+    height: 2.3rem;
+    display: flex;
+    gap: 3%;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    font-size: 0.8rem;
+    font-weight: 700;
+    border-radius: 18px;
+    background-color: $yellow500;
+    color: $purple500;
+    &:hover {
+      transform: scale(1.05);
+      transition: transform 280ms ease-in-out;
+      color: #57a773;
+    }
+    i {
+      border-radius: 0;
+      display: flex;
+      align-items: center;
+      svg {
+        position: relative;
+        bottom: 1px;
+        transform: scale(1);
+        width: 15px;
+        height: 15px;
+      }
+    }
+  }
+}
+
+#card-two {
+  grid-area: card-two;
+}
+
+#card-three {
+  grid-area: card-three;
+}
+
+#card-four {
+  grid-area: card-four;
+  margin-top: 64px;
+}
+
+#card-five {
+  grid-area: card-five;
+}
+
+#card_six {
+  grid-area: card-six;
+}
+
+#card-seven {
+  grid-area: card-seven;
+}
+
+#card-eight {
+  grid-area: card-eight;
+}

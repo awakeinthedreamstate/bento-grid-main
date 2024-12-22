@@ -1,0 +1,191 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  border: 1px solid black;
+  font-family: DM Sans, sans-serif;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin-block-end: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role=list],
+ol[role=list] {
+  list-style: none;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1,
+h2,
+h3,
+h4,
+button,
+input,
+label {
+  line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1,
+h2,
+h3,
+h4 {
+  text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  -webkit-text-decoration-skip: ink;
+          text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+.font-weight-one {
+  font-weight: 500;
+}
+
+#card-one {
+  grid-area: card-one;
+  margin-bottom: -64px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: hsl(31, 66%, 93%);
+  padding-bottom: 1rem;
+}
+#card-one * {
+  border: none;
+}
+#card-one p {
+  width: 80%;
+  font-size: 1.8rem;
+  line-height: 1.5rem;
+  letter-spacing: -2.5px;
+  position: relative;
+  top: -10%;
+}
+#card-one p span {
+  font-style: italic;
+  color: hsl(256, 67%, 59%);
+}
+#card-one #post-button {
+  height: 2.3rem;
+  display: flex;
+  gap: 3%;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  font-size: 0.8rem;
+  font-weight: 700;
+  border-radius: 18px;
+  background-color: hsl(39, 100%, 71%);
+  color: hsl(256, 67%, 59%);
+}
+#card-one #post-button:hover {
+  transform: scale(1.05);
+  transition: transform 280ms ease-in-out;
+  color: #57a773;
+}
+#card-one #post-button i {
+  border-radius: 0;
+  display: flex;
+  align-items: center;
+}
+#card-one #post-button i svg {
+  position: relative;
+  bottom: 1px;
+  transform: scale(1);
+  width: 15px;
+  height: 15px;
+}
+
+#card-two {
+  grid-area: card-two;
+}
+
+#card-three {
+  grid-area: card-three;
+}
+
+#card-four {
+  grid-area: card-four;
+  margin-top: 64px;
+}
+
+#card-five {
+  grid-area: card-five;
+}
+
+#card_six {
+  grid-area: card-six;
+}
+
+#card-seven {
+  grid-area: card-seven;
+}
+
+#card-eight {
+  grid-area: card-eight;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  width: 724px;
+  height: 90vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1.33fr 1fr 1fr;
+  gap: 16px;
+  grid-template-areas: "card-one card-two card-two card-three" "card-four card-five card-six card-three" "card-four card-seven card-eight card-eight";
+}
+.container * {
+  border-radius: 10px;
+}/*# sourceMappingURL=styles.css.map */
