@@ -7,6 +7,10 @@ $yellow500: hsl(39, 100%, 71%);
   font-weight: 500;
 }
 
+.italicised {
+  font-style: italic;
+}
+
 #card-one {
   grid-area: card-one;
   margin-bottom: -64px;
@@ -25,9 +29,9 @@ $yellow500: hsl(39, 100%, 71%);
     line-height: 1.5rem;
     letter-spacing: -2.5px;
     position: relative;
+    //space between text & button
     top: -10%;
     span {
-      font-style: italic;
       color: $purple500;
     }
   }
@@ -43,6 +47,9 @@ $yellow500: hsl(39, 100%, 71%);
     border-radius: 18px;
     background-color: $yellow500;
     color: $purple500;
+    //space between text & button
+    position: relative;
+    top: -2%;
     &:hover {
       transform: scale(1.05);
       transition: transform 280ms ease-in-out;
@@ -68,6 +75,40 @@ $yellow500: hsl(39, 100%, 71%);
 
 #card-two {
   grid-area: card-two;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: $purple500;
+  color: white;
+  * {
+    width: 80%;
+    text-align: center;
+    margin: 0;
+    border: none;
+  }
+  p,
+  img {
+    position: relative;
+    top: -8px;
+  }
+  p:nth-of-type(1) {
+    font-size: 2.5rem;
+    line-height: 2.2rem;
+    span:nth-of-type(1) {
+      color: $yellow500;
+    }
+  }
+  img {
+    width: 35%;
+    position: relative;
+    top: 0.813rem;
+  }
+  p:nth-of-type(2) {
+    font-size: 0.7rem;
+    position: relative;
+    top: 1.19rem;
+  }
 }
 
 #card-three {

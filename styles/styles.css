@@ -86,6 +86,10 @@ select {
   font-weight: 500;
 }
 
+.italicised {
+  font-style: italic;
+}
+
 #card-one {
   grid-area: card-one;
   margin-bottom: -64px;
@@ -108,7 +112,6 @@ select {
   top: -10%;
 }
 #card-one p span {
-  font-style: italic;
   color: hsl(256, 67%, 59%);
 }
 #card-one #post-button {
@@ -123,6 +126,8 @@ select {
   border-radius: 18px;
   background-color: hsl(39, 100%, 71%);
   color: hsl(256, 67%, 59%);
+  position: relative;
+  top: -2%;
 }
 #card-one #post-button:hover {
   transform: scale(1.05);
@@ -147,6 +152,40 @@ select {
 
 #card-two {
   grid-area: card-two;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: hsl(256, 67%, 59%);
+  color: white;
+}
+#card-two * {
+  width: 80%;
+  text-align: center;
+  margin: 0;
+  border: none;
+}
+#card-two p,
+#card-two img {
+  position: relative;
+  top: -8px;
+}
+#card-two p:nth-of-type(1) {
+  font-size: 2.5rem;
+  line-height: 2.2rem;
+}
+#card-two p:nth-of-type(1) span:nth-of-type(1) {
+  color: hsl(39, 100%, 71%);
+}
+#card-two img {
+  width: 35%;
+  position: relative;
+  top: 0.813rem;
+}
+#card-two p:nth-of-type(2) {
+  font-size: 0.7rem;
+  position: relative;
+  top: 1.19rem;
 }
 
 #card-three {
