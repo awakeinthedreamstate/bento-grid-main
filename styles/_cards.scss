@@ -27,9 +27,6 @@ $yellow500: hsl(39, 100%, 71%);
   @include flexBox(column, center, center);
   background-color: $yellow100;
   padding-bottom: 1rem;
-  * {
-    border: none;
-  }
   p {
     width: 80%;
     @include defaultFontStyle(0px, 0px, 0px, 0);
@@ -50,13 +47,13 @@ $yellow500: hsl(39, 100%, 71%);
     font-size: 0.8rem;
     font-weight: 700;
     border-radius: 18px;
+    border: none;
     background-color: $yellow500;
     color: $purple500;
     //space between text & button
     position: relative;
     top: -2%;
     &:hover {
-      color: #57a773;
       transform: scale(1.05);
       transition: transform 190ms ease-in-out;
       i svg {
@@ -86,8 +83,6 @@ $yellow500: hsl(39, 100%, 71%);
   * {
     width: 80%;
     text-align: center;
-    margin: 0;
-    border: none;
   }
   p,
   img {
@@ -119,11 +114,6 @@ $yellow500: hsl(39, 100%, 71%);
   padding-left: 10%;
   overflow: hidden;
   background-color: $purple100;
-  * {
-    margin: 0;
-    border: none;
-  }
-
   p:nth-of-type(1) {
     @include defaultFontStyle(-0.4rem, -0.4rem, 0.05rem, 50);
     width: 100%;
@@ -153,10 +143,6 @@ $yellow500: hsl(39, 100%, 71%);
   padding: 0.94rem;
   padding-right: 0.313rem;
   @include flexBox(column, space-between, left);
-  * {
-    margin: 0;
-    border: none;
-  }
   p {
     @include defaultFontStyle(0px, 0px, 0px, 0);
     width: 90%;
@@ -169,9 +155,6 @@ $yellow500: hsl(39, 100%, 71%);
   padding: 0.9rem 0.94rem;
   overflow: hidden;
   background-color: white;
-  * {
-    border: none;
-  }
   p {
     @include defaultFontStyle(-0.3rem, -0.25rem, 0px, 50);
   }
@@ -190,10 +173,6 @@ $yellow500: hsl(39, 100%, 71%);
   padding: 0.94rem 0 0 0.94rem;
   overflow: hidden;
   background-color: $yellow500;
-  * {
-    margin: 0;
-    border: none;
-  }
   p {
     @include defaultFontStyle(-0.3rem, -0.22rem, 0px, 0);
     width: 90%;
@@ -215,10 +194,6 @@ $yellow500: hsl(39, 100%, 71%);
   padding: 0.94rem;
   padding-right: 0;
   background-color: white;
-  * {
-    margin: 0;
-    border: none;
-  }
   p {
     &:nth-of-type(1) {
       @include defaultFontStyle(0.9rem, 0px, 0px, 0);
@@ -248,9 +223,6 @@ $yellow500: hsl(39, 100%, 71%);
   padding-right: 0;
   gap: 0.1rem;
   background-color: $purple500;
-  * {
-    margin: 0;
-  }
   img {
     width: 9.7rem;
   }

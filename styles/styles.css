@@ -81,6 +81,10 @@ select {
   font-size: inherit;
 }
 
+p:not(#card-one > p) {
+  margin: 0;
+}
+
 .italicised {
   font-style: italic;
 }
@@ -94,9 +98,6 @@ select {
   align-items: center;
   background-color: hsl(31, 66%, 93%);
   padding-bottom: 1rem;
-}
-#card-one * {
-  border: none;
 }
 #card-one p {
   width: 80%;
@@ -120,13 +121,13 @@ select {
   font-size: 0.8rem;
   font-weight: 700;
   border-radius: 18px;
+  border: none;
   background-color: hsl(39, 100%, 71%);
   color: hsl(256, 67%, 59%);
   position: relative;
   top: -2%;
 }
 #card-one #post-button:hover {
-  color: #57a773;
   transform: scale(1.05);
   transition: transform 190ms ease-in-out;
 }
@@ -158,8 +159,6 @@ select {
 #card-two * {
   width: 80%;
   text-align: center;
-  margin: 0;
-  border: none;
 }
 #card-two p,
 #card-two img {
@@ -193,10 +192,6 @@ select {
   padding-left: 10%;
   overflow: hidden;
   background-color: hsl(254, 88%, 90%);
-}
-#card-three * {
-  margin: 0;
-  border: none;
 }
 #card-three p:nth-of-type(1) {
   font-size: 1.4rem;
@@ -233,10 +228,6 @@ select {
   justify-content: space-between;
   align-items: left;
 }
-#card-four * {
-  margin: 0;
-  border: none;
-}
 #card-four p {
   font-size: calc(1.8rem + 0px);
   line-height: calc(1.5rem + 0px);
@@ -254,9 +245,6 @@ select {
   padding: 0.9rem 0.94rem;
   overflow: hidden;
   background-color: white;
-}
-#card-five * {
-  border: none;
 }
 #card-five p {
   font-size: 1.5rem;
@@ -281,10 +269,6 @@ select {
   padding: 0.94rem 0 0 0.94rem;
   overflow: hidden;
   background-color: hsl(39, 100%, 71%);
-}
-#card-six * {
-  margin: 0;
-  border: none;
 }
 #card-six p {
   font-size: 1.5rem;
@@ -312,10 +296,6 @@ select {
   padding: 0.94rem;
   padding-right: 0;
   background-color: white;
-}
-#card-seven * {
-  margin: 0;
-  border: none;
 }
 #card-seven p:nth-of-type(1) {
   font-size: 2.7rem;
@@ -350,9 +330,6 @@ select {
   gap: 0.1rem;
   background-color: hsl(256, 67%, 59%);
 }
-#card-eight * {
-  margin: 0;
-}
 #card-eight img {
   width: 9.7rem;
 }
@@ -380,8 +357,8 @@ body {
 }
 
 .container {
-  width: 724px;
-  height: 90vh;
+  max-width: 724px;
+  min-height: 90vh;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 1.33fr 1fr 1fr;

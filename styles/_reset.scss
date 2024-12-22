@@ -81,3 +81,7 @@ select {
   font-family: inherit;
   font-size: inherit;
 }
+
+p:not(#card-one > p) {
+  margin: 0;
+}
