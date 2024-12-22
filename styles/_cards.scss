@@ -3,8 +3,18 @@ $purple500: hsl(256, 67%, 59%);
 $yellow100: hsl(31, 66%, 93%);
 $yellow500: hsl(39, 100%, 71%);
 
-.font-weight-one {
-  font-weight: 500;
+@mixin flexBox($direction, $justify, $align) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin defaultFontStyle($updateSize, $updateLH, $updateSpacing, $updateWeight) {
+  font-size: calc(1.8rem + $updateSize);
+  line-height: calc(1.5rem + $updateLH);
+  letter-spacing: calc(-2.5px + $updateSpacing);
+  font-weight: calc(500 + $updateWeight);
 }
 
 .italicised {
@@ -14,10 +24,7 @@ $yellow500: hsl(39, 100%, 71%);
 #card-one {
   grid-area: card-one;
   margin-bottom: -64px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  @include flexBox(column, center, center);
   background-color: $yellow100;
   padding-bottom: 1rem;
   * {
@@ -25,9 +32,7 @@ $yellow500: hsl(39, 100%, 71%);
   }
   p {
     width: 80%;
-    font-size: 1.8rem;
-    line-height: 1.5rem;
-    letter-spacing: -2.5px;
+    @include defaultFontStyle(0px, 0px, 0px, 0);
     position: relative;
     //space between text & button
     top: -10%;
@@ -51,11 +56,11 @@ $yellow500: hsl(39, 100%, 71%);
     position: relative;
     top: -2%;
     &:hover {
-      transform: scale(1.05);
-      transition: transform 280ms ease-in-out;
       color: #57a773;
-      i {
-        animation: icon 0.2s linear;
+      transform: scale(1.05);
+      transition: transform 190ms ease-in-out;
+      i svg {
+        animation: icon 0.3s linear;
       }
     }
     i {
@@ -75,10 +80,7 @@ $yellow500: hsl(39, 100%, 71%);
 
 #card-two {
   grid-area: card-two;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  @include flexBox(column, center, center);
   background-color: $purple500;
   color: white;
   * {
@@ -113,27 +115,149 @@ $yellow500: hsl(39, 100%, 71%);
 
 #card-three {
   grid-area: card-three;
+  @include flexBox(column, center, left);
+  padding-left: 10%;
+  overflow: hidden;
+  background-color: $purple100;
+  * {
+    margin: 0;
+    border: none;
+  }
+
+  p:nth-of-type(1) {
+    @include defaultFontStyle(-0.4rem, -0.4rem, 0.05rem, 50);
+    width: 100%;
+    position: relative;
+    top: -3.1rem;
+  }
+  img {
+    transform: scale(1.65);
+    position: relative;
+    left: 32.5%;
+    top: 2%;
+  }
+  p:nth-of-type(2) {
+    position: relative;
+    top: 4rem;
+    line-height: 0.9rem;
+    font-size: 0.8rem;
+    font-weight: 400;
+    width: 95%;
+  }
 }
 
 #card-four {
   grid-area: card-four;
   margin-top: 64px;
+  background-color: $yellow500;
+  padding: 0.94rem;
+  padding-right: 0.313rem;
+  @include flexBox(column, space-between, left);
+  * {
+    margin: 0;
+    border: none;
+  }
+  p {
+    @include defaultFontStyle(0px, 0px, 0px, 0);
+    width: 90%;
+  }
 }
 
 #card-five {
   grid-area: card-five;
+  @include flexBox(column, space-between, left);
+  padding: 0.9rem 0.94rem;
+  overflow: hidden;
+  background-color: white;
+  * {
+    border: none;
+  }
+  p {
+    @include defaultFontStyle(-0.3rem, -0.25rem, 0px, 50);
+  }
+  img {
+    transform: scale(1.5);
+    position: relative;
+    top: 0.5rem;
+    left: 25%;
+    box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.05);
+  }
 }
 
-#card_six {
+#card-six {
   grid-area: card-six;
+  @include flexBox(column, space-between, left);
+  padding: 0.94rem 0 0 0.94rem;
+  overflow: hidden;
+  background-color: $yellow500;
+  * {
+    margin: 0;
+    border: none;
+  }
+  p {
+    @include defaultFontStyle(-0.3rem, -0.22rem, 0px, 0);
+    width: 90%;
+  }
+  img {
+    width: 4.25rem;
+    height: 3.22rem;
+    transform: scale(2);
+    position: relative;
+    left: calc(22% + 0.0625rem);
+    top: 12%;
+    border-radius: 0;
+  }
 }
 
 #card-seven {
   grid-area: card-seven;
+  @include flexBox(column, space-between, left);
+  padding: 0.94rem;
+  padding-right: 0;
+  background-color: white;
+  * {
+    margin: 0;
+    border: none;
+  }
+  p {
+    &:nth-of-type(1) {
+      @include defaultFontStyle(0.9rem, 0px, 0px, 0);
+      position: relative;
+      top: 0.3rem;
+      span {
+        position: relative;
+        top: -0.25rem;
+      }
+    }
+    &:nth-of-type(2) {
+      font-size: 0.8rem;
+      font-weight: 500;
+      width: 100%;
+      letter-spacing: -0.02rem;
+    }
+  }
+  img {
+    width: 80%;
+  }
 }
 
 #card-eight {
   grid-area: card-eight;
+  @include flexBox(row, center, center);
+  padding: 0.94rem;
+  padding-right: 0;
+  gap: 0.1rem;
+  background-color: $purple500;
+  * {
+    margin: 0;
+  }
+  img {
+    width: 9.7rem;
+  }
+  p {
+    @include defaultFontStyle(-0.1rem, 0px, 0.05rem, 0);
+    color: white;
+  }
 }
 
 @keyframes icon {
