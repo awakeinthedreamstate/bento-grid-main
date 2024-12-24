@@ -91,7 +91,7 @@ p:not(#card-one > p) {
 
 #card-one {
   grid-area: card-one;
-  margin-bottom: 4rem;
+  margin-bottom: -4rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -229,14 +229,27 @@ p:not(#card-one > p) {
   }
 }
 #card-two img {
-  width: 60%;
+  width: 35%;
   position: relative;
   top: 0.813rem;
 }
+@media (max-width: 375px) {
+  #card-two img {
+    width: 60%;
+    top: 0.813rem;
+  }
+}
 #card-two p:nth-of-type(2) {
-  font-size: 1.2rem;
+  font-size: 0.7rem;
   position: relative;
   top: 1.19rem;
+}
+@media (max-width: 375px) {
+  #card-two p:nth-of-type(2) {
+    font-size: 1.2rem;
+    position: relative;
+    top: 1.19rem;
+  }
 }
 
 #card-three {
@@ -313,6 +326,7 @@ p:not(#card-one > p) {
   grid-area: card-four;
   margin-top: 64px;
   background-color: hsl(39, 100%, 71%);
+  padding: 1rem;
   padding-right: 0.313rem;
   display: flex;
   flex-direction: column;
@@ -543,7 +557,7 @@ body {
   align-items: center;
   justify-content: center;
   background-color: hsl(0, 0%, 96%);
-  padding-bottom: 2rem;
+  border: 1px solid black;
 }
 
 .container {
@@ -567,7 +581,7 @@ body {
 
 @media (max-width: 375px) {
   .container {
-    width: 100%;
+    min-width: 375px;
     padding: 0.5rem 0.5rem;
     grid-template-columns: 1fr;
     grid-template-rows: 18rem 9.5rem repeat(6, 18rem);

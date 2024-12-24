@@ -23,7 +23,7 @@ $yellow500: hsl(39, 100%, 71%);
 
 #card-one {
   grid-area: card-one;
-  margin-bottom: 4rem;
+  margin-bottom: -4rem;
   @include flexBox(column, center, center);
   background-color: $yellow100;
   padding-bottom: 1rem;
@@ -131,14 +131,24 @@ $yellow500: hsl(39, 100%, 71%);
     }
   }
   img {
-    width: 60%;
+    width: 35%;
     position: relative;
     top: 0.813rem;
+    @media (max-width: 375px) {
+      width: 60%;
+      top: 0.813rem;
+    }
   }
+
   p:nth-of-type(2) {
-    font-size: 1.2rem;
+    font-size: 0.7rem;
     position: relative;
     top: 1.19rem;
+    @media (max-width: 375px) {
+      font-size: 1.2rem;
+      position: relative;
+      top: 1.19rem;
+    }
   }
 }
 
@@ -196,7 +206,7 @@ $yellow500: hsl(39, 100%, 71%);
   grid-area: card-four;
   margin-top: 64px;
   background-color: $yellow500;
-
+  padding: 1rem;
   padding-right: 0.313rem;
   @include flexBox(column, space-between, left);
   @media (max-width: 375px) {

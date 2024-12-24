@@ -6,7 +6,8 @@ body {
   align-items: center;
   justify-content: center;
   background-color: hsl(0, 0%, 96%);
-  padding-bottom: 2rem;
+  border: 1px solid black;
+  //   padding-bottom: 2rem;
 }
 
 .container {
@@ -34,7 +35,7 @@ body {
 
 @media (max-width: 375px) {
   .container {
-    width: 100%;
+    min-width: 375px;
     padding: 0.5rem 0.5rem;
     grid-template-columns: 1fr;
     grid-template-rows: 18rem 9.5rem repeat(6, 18rem);
