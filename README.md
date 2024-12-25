@@ -41,6 +41,6 @@ Users should be able to:
 
 My mojor learning from this project was how to use grid to create attractive layouts. Using grid, I was also able to create a responsive page that adjusted according to screen width by manipulating the arrangement of cards and numbers of rows and columns available within a pair of breakpoints. Flexbox also came in very handy for arranging the elements inside the cards to achieve the desired look. In future projects I will improve on using flexbox to properly size and arrange elements without much reliance on hard-coded values.
 
-## 👩‍💻 Develope
+## 👩‍💻 Developer
 
 [![portfolio](https://img.shields.io/badge/github-000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/awakeinthedreamstate) [![frontend-mentor](https://img.shields.io/badge/frontend_mentor-0A66C2?style=for-the-badge&logo=frontendmentor&logoColor=white)](https://www.frontendmentor.io/profile/awakeinthedreamstate)
