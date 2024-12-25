@@ -10,7 +10,12 @@ $yellow500: hsl(39, 100%, 71%);
   align-items: $align;
 }
 
-@mixin defaultFontStyle($updateSize, $updateLH, $updateSpacing, $updateWeight) {
+@mixin defaultFontStyle(
+  $updateSize: 0px,
+  $updateLH: 0px,
+  $updateSpacing: 0px,
+  $updateWeight: 0
+) {
   font-size: calc(1.8rem + $updateSize);
   line-height: calc(1.5rem + $updateLH);
   letter-spacing: calc(-2.5px + $updateSpacing);
@@ -23,18 +28,32 @@ $yellow500: hsl(39, 100%, 71%);
 
 #card-one {
   grid-area: card-one;
-  margin-bottom: -64px;
+  margin-bottom: -4rem;
   @include flexBox(column, center, center);
   background-color: $yellow100;
   padding-bottom: 1rem;
+  @media (max-width: 375px) {
+    margin-top: 2.3rem;
+    margin-bottom: 2.25rem;
+    @include flexBox(column, left, start);
+    padding: 1.5rem 0 0 1.5rem;
+  }
   p {
     width: 80%;
-    @include defaultFontStyle(0px, 0px, 0px, 0);
+    @include defaultFontStyle;
     position: relative;
     //space between text & button
     top: -10%;
     span {
       color: $purple500;
+    }
+    @media (max-width: 375px) {
+      width: 100%;
+      @include defaultFontStyle(
+        $updateSize: 0.3rem,
+        $updateSpacing: 0.009rem,
+        $updateWeight: 50
+      );
     }
   }
   #post-button {
@@ -53,12 +72,9 @@ $yellow500: hsl(39, 100%, 71%);
     //space between text & button
     position: relative;
     top: -2%;
-    &:hover {
-      transform: scale(1.05);
-      transition: transform 190ms ease-in-out;
-      i svg {
-        animation: icon 0.3s linear;
-      }
+    @media (max-width: 375px) {
+      font-size: 1.1rem;
+      font-weight: 900;
     }
     i {
       border-radius: 0;
@@ -70,7 +86,24 @@ $yellow500: hsl(39, 100%, 71%);
         transform: scale(1);
         width: 15px;
         height: 15px;
+        @media (max-width: 375px) {
+          transform: scale(1.2);
+        }
       }
+    }
+    &:hover {
+      transform: scale(1.05);
+      transition: transform 190ms ease-in-out;
+      i svg {
+        animation: icon 0.3s linear;
+      }
+    }
+    @media (max-width: 375px) {
+      //space between text & button
+      top: 5%;
+      width: 50%;
+      padding: 1.5rem 0;
+      border-radius: 30px;
     }
   }
 }
@@ -83,28 +116,49 @@ $yellow500: hsl(39, 100%, 71%);
   * {
     width: 80%;
     text-align: center;
+    @media (max-width: 375px) {
+      width: 80%;
+    }
   }
   p,
   img {
     position: relative;
     top: -8px;
+    @media (max-width: 375px) {
+      top: -0.9rem;
+    }
   }
+  //card-title
   p:nth-of-type(1) {
     font-size: 2.5rem;
     line-height: 2.2rem;
     span:nth-of-type(1) {
       color: $yellow500;
     }
+    @media (max-width: 375px) {
+      font-size: 3rem;
+      line-height: 2.5rem;
+    }
   }
   img {
     width: 35%;
     position: relative;
     top: 0.813rem;
+    @media (max-width: 375px) {
+      width: 60%;
+      top: 0.813rem;
+    }
   }
+  //card-subtitle
   p:nth-of-type(2) {
     font-size: 0.7rem;
     position: relative;
     top: 1.19rem;
+    @media (max-width: 375px) {
+      font-size: 1.2rem;
+      position: relative;
+      top: 1.19rem;
+    }
   }
 }
 
@@ -114,18 +168,63 @@ $yellow500: hsl(39, 100%, 71%);
   padding-left: 10%;
   overflow: hidden;
   background-color: $purple100;
+  @media (max-width: 375px) {
+    @include flexBox(column, center, center);
+    gap: 1.2rem;
+    margin-top: -4.5rem;
+    margin-bottom: -4.5rem;
+    padding: 1rem;
+  }
+  @media (376px <= width <= 560px) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 1rem;
+    grid-template-areas:
+      "text-one image-one"
+      "text-two image-one";
+    margin: 0;
+    padding: 1rem;
+    gap: 0;
+  }
+  //card-title
   p:nth-of-type(1) {
     @include defaultFontStyle(-0.4rem, -0.4rem, 0.05rem, 50);
     width: 100%;
     position: relative;
     top: -3.1rem;
+    @media (376px <= width <= 560px) {
+      grid-area: text-one;
+      width: 80%;
+      position: relative;
+      top: 0.5rem;
+    }
+    @media (max-width: 375px) {
+      top: 0;
+      text-align: center;
+      @include defaultFontStyle($updateSpacing: 0.009rem, $updateWeight: 50);
+    }
   }
   img {
     transform: scale(1.65);
     position: relative;
     left: 32.5%;
     top: 2%;
+    @media (max-width: 375px) {
+      transform: scale(1);
+      top: 0;
+      left: 0;
+    }
+    @media (376px <= width <= 560px) {
+      grid-area: image-one;
+      transform: scale(1);
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+    }
   }
+  //card-subtitle
   p:nth-of-type(2) {
     position: relative;
     top: 4rem;
@@ -133,6 +232,17 @@ $yellow500: hsl(39, 100%, 71%);
     font-size: 0.8rem;
     font-weight: 400;
     width: 95%;
+    @media (376px <= width <= 560px) {
+      grid-area: text-two;
+      width: 80%;
+      position: relative;
+      top: -0.5rem;
+    }
+    @media (max-width: 375px) {
+      top: 0;
+      text-align: center;
+      font-size: 1.2rem;
+    }
   }
 }
 
@@ -140,12 +250,25 @@ $yellow500: hsl(39, 100%, 71%);
   grid-area: card-four;
   margin-top: 64px;
   background-color: $yellow500;
-  padding: 0.94rem;
+  padding: 1rem;
   padding-right: 0.313rem;
   @include flexBox(column, space-between, left);
+  @media (max-width: 375px) {
+    margin-top: -2.25rem;
+    margin-bottom: -1.2rem;
+    padding: 1.5rem;
+  }
   p {
     @include defaultFontStyle(0px, 0px, 0px, 0);
     width: 90%;
+    @media (max-width: 375px) {
+      @include defaultFontStyle(0.3rem, 0.25em, 0.009rem, 50);
+    }
+  }
+  img {
+    @media (max-width: 375px) {
+      width: 70%;
+    }
   }
 }
 
@@ -157,6 +280,10 @@ $yellow500: hsl(39, 100%, 71%);
   background-color: white;
   p {
     @include defaultFontStyle(-0.3rem, -0.25rem, 0px, 50);
+    @media (max-width: 375px) {
+      width: 100%;
+      @include defaultFontStyle($updateSpacing: 0.009rem, $updateWeight: 50);
+    }
   }
   img {
     transform: scale(1.5);
@@ -164,6 +291,11 @@ $yellow500: hsl(39, 100%, 71%);
     top: 0.5rem;
     left: 25%;
     box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.05);
+    @media (max-width: 375px) {
+      transform: scale(1);
+      left: 0;
+      top: 0;
+    }
   }
 }
 
@@ -173,9 +305,15 @@ $yellow500: hsl(39, 100%, 71%);
   padding: 0.94rem 0 0 0.94rem;
   overflow: hidden;
   background-color: $yellow500;
+  @media (max-width: 375px) {
+    margin-bottom: 4.5rem;
+  }
   p {
     @include defaultFontStyle(-0.3rem, -0.22rem, 0px, 0);
     width: 90%;
+    @media (max-width: 375px) {
+      @include defaultFontStyle($updateSpacing: 0.009rem, $updateWeight: 50);
+    }
   }
   img {
     width: 4.25rem;
@@ -185,6 +323,11 @@ $yellow500: hsl(39, 100%, 71%);
     left: calc(22% + 0.0625rem);
     top: 12%;
     border-radius: 0;
+    @media (max-width: 375px) {
+      transform: scale(3.2);
+      top: -15%;
+      left: 23%;
+    }
   }
 }
 
@@ -194,9 +337,15 @@ $yellow500: hsl(39, 100%, 71%);
   padding: 0.94rem;
   padding-right: 0;
   background-color: white;
+  @media (max-width: 375px) {
+    padding: 1.5rem;
+    margin-top: 6.8rem;
+    margin-bottom: -2.3rem;
+  }
+  //card-title
   p {
     &:nth-of-type(1) {
-      @include defaultFontStyle(0.9rem, 0px, 0px, 0);
+      @include defaultFontStyle($updateSize: 0.9rem);
       position: relative;
       top: 0.3rem;
       span {
@@ -204,15 +353,22 @@ $yellow500: hsl(39, 100%, 71%);
         top: -0.25rem;
       }
     }
+    //card-subtitle
     &:nth-of-type(2) {
       font-size: 0.8rem;
       font-weight: 500;
       width: 100%;
       letter-spacing: -0.02rem;
+      @media (max-width: 375px) {
+        font-size: 1.2rem;
+      }
     }
   }
   img {
     width: 80%;
+    @media (max-width: 375px) {
+      width: 60%;
+    }
   }
 }
 
@@ -223,12 +379,25 @@ $yellow500: hsl(39, 100%, 71%);
   padding-right: 0;
   gap: 0.1rem;
   background-color: $purple500;
+  @media (max-width: 375px) {
+    margin-top: 4.5rem;
+    margin-bottom: -6.8rem;
+    padding: 1rem 4rem;
+    @include flexBox(column, space-between, center);
+  }
   img {
     width: 9.7rem;
+    @media (max-width: 375px) {
+      width: 100%;
+    }
   }
   p {
-    @include defaultFontStyle(-0.1rem, 0px, 0.05rem, 0);
+    @include defaultFontStyle($updateSize: -0.1rem, $updateSpacing: 0.05rem);
     color: white;
+    @media (max-width: 375px) {
+      text-align: center;
+      @include defaultFontStyle(0rem, 0rem, 0.1rem, 50);
+    }
   }
 }
 
