@@ -126,7 +126,7 @@ p:not(#card-one > p) {
   #card-one p {
     width: 100%;
     font-size: 2.1rem;
-    line-height: 1.5rem;
+    line-height: calc(1.5rem + 0px);
     letter-spacing: calc(-2.5px + 0.009rem);
     font-weight: 550;
   }
@@ -153,13 +153,6 @@ p:not(#card-one > p) {
     font-weight: 900;
   }
 }
-#card-one #post-button:hover {
-  transform: scale(1.05);
-  transition: transform 190ms ease-in-out;
-}
-#card-one #post-button:hover i svg {
-  animation: icon 0.3s linear;
-}
 #card-one #post-button i {
   border-radius: 0;
   display: flex;
@@ -176,6 +169,13 @@ p:not(#card-one > p) {
   #card-one #post-button i svg {
     transform: scale(1.2);
   }
+}
+#card-one #post-button:hover {
+  transform: scale(1.05);
+  transition: transform 190ms ease-in-out;
+}
+#card-one #post-button:hover i svg {
+  animation: icon 0.3s linear;
 }
 @media (max-width: 375px) {
   #card-one #post-button {
@@ -274,6 +274,18 @@ p:not(#card-one > p) {
     padding: 1rem;
   }
 }
+@media (376px <= width <= 560px) {
+  #card-three {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 1rem;
+    grid-template-areas: "text-one image-one" "text-two image-one";
+    margin: 0;
+    padding: 1rem;
+    gap: 0;
+  }
+}
 #card-three p:nth-of-type(1) {
   font-size: 1.4rem;
   line-height: 1.1rem;
@@ -283,12 +295,20 @@ p:not(#card-one > p) {
   position: relative;
   top: -3.1rem;
 }
+@media (376px <= width <= 560px) {
+  #card-three p:nth-of-type(1) {
+    grid-area: text-one;
+    width: 80%;
+    position: relative;
+    top: 0.5rem;
+  }
+}
 @media (max-width: 375px) {
   #card-three p:nth-of-type(1) {
     top: 0;
     text-align: center;
-    font-size: 1.8rem;
-    line-height: 1.5rem;
+    font-size: calc(1.8rem + 0px);
+    line-height: calc(1.5rem + 0px);
     letter-spacing: calc(-2.5px + 0.009rem);
     font-weight: 550;
   }
@@ -306,6 +326,16 @@ p:not(#card-one > p) {
     left: 0;
   }
 }
+@media (376px <= width <= 560px) {
+  #card-three img {
+    grid-area: image-one;
+    transform: scale(1);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
+}
 #card-three p:nth-of-type(2) {
   position: relative;
   top: 4rem;
@@ -313,6 +343,14 @@ p:not(#card-one > p) {
   font-size: 0.8rem;
   font-weight: 400;
   width: 95%;
+}
+@media (376px <= width <= 560px) {
+  #card-three p:nth-of-type(2) {
+    grid-area: text-two;
+    width: 80%;
+    position: relative;
+    top: -0.5rem;
+  }
 }
 @media (max-width: 375px) {
   #card-three p:nth-of-type(2) {
@@ -380,8 +418,8 @@ p:not(#card-one > p) {
 @media (max-width: 375px) {
   #card-five p {
     width: 100%;
-    font-size: 1.8rem;
-    line-height: 1.5rem;
+    font-size: calc(1.8rem + 0px);
+    line-height: calc(1.5rem + 0px);
     letter-spacing: calc(-2.5px + 0.009rem);
     font-weight: 550;
   }
@@ -425,8 +463,8 @@ p:not(#card-one > p) {
 }
 @media (max-width: 375px) {
   #card-six p {
-    font-size: 1.8rem;
-    line-height: 1.5rem;
+    font-size: calc(1.8rem + 0px);
+    line-height: calc(1.5rem + 0px);
     letter-spacing: calc(-2.5px + 0.009rem);
     font-weight: 550;
   }
@@ -554,7 +592,7 @@ p:not(#card-one > p) {
 }
 body {
   width: 100%;
-  height: 100vh;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -580,27 +618,7 @@ body {
   box-shadow: 0px 0px 20px 3px rgba(0, 0, 0, 0.05);
 }
 
-@media (max-width: 375px) {
-  html {
-    overflow: visible;
-  }
-  .container {
-    min-width: 100vw;
-    height: auto;
-    padding: 0.5rem 0.5rem;
-    grid-template-columns: 1fr;
-    grid-template-rows: 18rem 9.5rem repeat(6, 18rem);
-    gap: 1rem;
-    grid-template-areas: "card-two" "card-five" "card-six" "card-three" "card-eight" "card-seven" "card-one" "card-four";
-  }
-  .card:hover {
-    transform: scale(1);
-  }
-}
-@media (375px <= width <= 746px) {
-  html {
-    overflow: visible;
-  }
+@media (561px <= width <= 746px) {
   body {
     display: flex;
     justify-content: center;
@@ -612,9 +630,51 @@ body {
     width: 33.69rem;
     height: 100%;
     padding: 0;
-    grid-template-columns: repeat(3, 10.563rem) !important;
+    grid-template-columns: repeat(3, 10.563rem);
     grid-template-rows: 14.049rem 10.563rem 10.563rem 10.563rem;
     gap: 1rem;
     grid-template-areas: "card-two card-two card-three" "card-one card-five card-three" "card-four card-six card-seven" "card-four card-eight card-eight";
+  }
+}
+@media (376px <= width <= 560px) {
+  html {
+    overflow: visible;
+  }
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin: 2rem auto;
+  }
+  .container {
+    width: 22.13rem;
+    height: 100%;
+    padding: 0;
+    grid-template-columns: repeat(2, 10.563rem);
+    grid-template-rows: 14.049rem 10.563rem 10.563rem 10.563rem 10.563rem 10.563rem;
+    gap: 1rem;
+    grid-template-areas: "card-two card-two" "card-three card-three" "card-one card-five" "card-four card-six " "card-four card-seven" "card-eight card-eight";
+  }
+}
+@media (max-width: 375px) {
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  .container {
+    min-width: max(100vw, 375px);
+    height: 100%;
+    padding: 1rem;
+    margin-bottom: 1.2rem;
+    grid-template-columns: 1fr;
+    grid-template-rows: 18rem 9.5rem repeat(6, 18rem);
+    gap: 1rem;
+    grid-template-areas: "card-two" "card-five" "card-six" "card-three" "card-eight" "card-seven" "card-one" "card-four";
+  }
+  .card:hover {
+    transform: scale(1);
   }
 }/*# sourceMappingURL=styles.css.map */
