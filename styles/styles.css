@@ -28,8 +28,8 @@ dd {
 }
 
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
-ul[role=list],
-ol[role=list] {
+ul[role="list"],
+ol[role="list"] {
   list-style: none;
 }
 
@@ -61,7 +61,7 @@ h4 {
 /* A elements that don't have a class get default styles */
 a:not([class]) {
   -webkit-text-decoration-skip: ink;
-          text-decoration-skip-ink: auto;
+  text-decoration-skip-ink: auto;
   color: currentColor;
 }
 
@@ -91,13 +91,24 @@ p:not(#card-one > p) {
 
 #card-one {
   grid-area: card-one;
-  margin-bottom: -64px;
+  margin-bottom: -4rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: hsl(31, 66%, 93%);
   padding-bottom: 1rem;
+}
+@media (max-width: 375px) {
+  #card-one {
+    margin-top: 2.3rem;
+    margin-bottom: 2.25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: start;
+    padding: 1.5rem 0 0 1.5rem;
+  }
 }
 #card-one p {
   width: 80%;
@@ -110,6 +121,15 @@ p:not(#card-one > p) {
 }
 #card-one p span {
   color: hsl(256, 67%, 59%);
+}
+@media (max-width: 375px) {
+  #card-one p {
+    width: 100%;
+    font-size: 2.1rem;
+    line-height: calc(1.5rem + 0px);
+    letter-spacing: calc(-2.5px + 0.009rem);
+    font-weight: 550;
+  }
 }
 #card-one #post-button {
   height: 2.3rem;
@@ -127,12 +147,11 @@ p:not(#card-one > p) {
   position: relative;
   top: -2%;
 }
-#card-one #post-button:hover {
-  transform: scale(1.05);
-  transition: transform 190ms ease-in-out;
-}
-#card-one #post-button:hover i svg {
-  animation: icon 0.3s linear;
+@media (max-width: 375px) {
+  #card-one #post-button {
+    font-size: 1.1rem;
+    font-weight: 900;
+  }
 }
 #card-one #post-button i {
   border-radius: 0;
@@ -145,6 +164,26 @@ p:not(#card-one > p) {
   transform: scale(1);
   width: 15px;
   height: 15px;
+}
+@media (max-width: 375px) {
+  #card-one #post-button i svg {
+    transform: scale(1.2);
+  }
+}
+#card-one #post-button:hover {
+  transform: scale(1.05);
+  transition: transform 190ms ease-in-out;
+}
+#card-one #post-button:hover i svg {
+  animation: icon 0.3s linear;
+}
+@media (max-width: 375px) {
+  #card-one #post-button {
+    top: 5%;
+    width: 50%;
+    padding: 1.5rem 0;
+    border-radius: 30px;
+  }
 }
 
 #card-two {
@@ -160,10 +199,21 @@ p:not(#card-one > p) {
   width: 80%;
   text-align: center;
 }
+@media (max-width: 375px) {
+  #card-two * {
+    width: 80%;
+  }
+}
 #card-two p,
 #card-two img {
   position: relative;
   top: -8px;
+}
+@media (max-width: 375px) {
+  #card-two p,
+  #card-two img {
+    top: -0.9rem;
+  }
 }
 #card-two p:nth-of-type(1) {
   font-size: 2.5rem;
@@ -172,15 +222,34 @@ p:not(#card-one > p) {
 #card-two p:nth-of-type(1) span:nth-of-type(1) {
   color: hsl(39, 100%, 71%);
 }
+@media (max-width: 375px) {
+  #card-two p:nth-of-type(1) {
+    font-size: 3rem;
+    line-height: 2.5rem;
+  }
+}
 #card-two img {
   width: 35%;
   position: relative;
   top: 0.813rem;
 }
+@media (max-width: 375px) {
+  #card-two img {
+    width: 60%;
+    top: 0.813rem;
+  }
+}
 #card-two p:nth-of-type(2) {
   font-size: 0.7rem;
   position: relative;
   top: 1.19rem;
+}
+@media (max-width: 375px) {
+  #card-two p:nth-of-type(2) {
+    font-size: 1.2rem;
+    position: relative;
+    top: 1.19rem;
+  }
 }
 
 #card-three {
@@ -193,6 +262,30 @@ p:not(#card-one > p) {
   overflow: hidden;
   background-color: hsl(254, 88%, 90%);
 }
+@media (max-width: 375px) {
+  #card-three {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.2rem;
+    margin-top: -4.5rem;
+    margin-bottom: -4.5rem;
+    padding: 1rem;
+  }
+}
+@media (376px <= width <= 560px) {
+  #card-three {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 1rem;
+    grid-template-areas: "text-one image-one" "text-two image-one";
+    margin: 0;
+    padding: 1rem;
+    gap: 0;
+  }
+}
 #card-three p:nth-of-type(1) {
   font-size: 1.4rem;
   line-height: 1.1rem;
@@ -202,11 +295,46 @@ p:not(#card-one > p) {
   position: relative;
   top: -3.1rem;
 }
+@media (376px <= width <= 560px) {
+  #card-three p:nth-of-type(1) {
+    grid-area: text-one;
+    width: 80%;
+    position: relative;
+    top: 0.5rem;
+  }
+}
+@media (max-width: 375px) {
+  #card-three p:nth-of-type(1) {
+    top: 0;
+    text-align: center;
+    font-size: calc(1.8rem + 0px);
+    line-height: calc(1.5rem + 0px);
+    letter-spacing: calc(-2.5px + 0.009rem);
+    font-weight: 550;
+  }
+}
 #card-three img {
   transform: scale(1.65);
   position: relative;
   left: 32.5%;
   top: 2%;
+}
+@media (max-width: 375px) {
+  #card-three img {
+    transform: scale(1);
+    top: 0;
+    left: 0;
+  }
+}
+@media (376px <= width <= 560px) {
+  #card-three img {
+    grid-area: image-one;
+    transform: scale(1);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
 }
 #card-three p:nth-of-type(2) {
   position: relative;
@@ -216,17 +344,39 @@ p:not(#card-one > p) {
   font-weight: 400;
   width: 95%;
 }
+@media (376px <= width <= 560px) {
+  #card-three p:nth-of-type(2) {
+    grid-area: text-two;
+    width: 80%;
+    position: relative;
+    top: -0.5rem;
+  }
+}
+@media (max-width: 375px) {
+  #card-three p:nth-of-type(2) {
+    top: 0;
+    text-align: center;
+    font-size: 1.2rem;
+  }
+}
 
 #card-four {
   grid-area: card-four;
   margin-top: 64px;
   background-color: hsl(39, 100%, 71%);
-  padding: 0.94rem;
+  padding: 1rem;
   padding-right: 0.313rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: left;
+}
+@media (max-width: 375px) {
+  #card-four {
+    margin-top: -2.25rem;
+    margin-bottom: -1.2rem;
+    padding: 1.5rem;
+  }
 }
 #card-four p {
   font-size: calc(1.8rem + 0px);
@@ -234,6 +384,19 @@ p:not(#card-one > p) {
   letter-spacing: -2.5px;
   font-weight: 500;
   width: 90%;
+}
+@media (max-width: 375px) {
+  #card-four p {
+    font-size: 2.1rem;
+    line-height: calc(1.5rem + 0.25em);
+    letter-spacing: calc(-2.5px + 0.009rem);
+    font-weight: 550;
+  }
+}
+@media (max-width: 375px) {
+  #card-four img {
+    width: 70%;
+  }
 }
 
 #card-five {
@@ -252,12 +415,28 @@ p:not(#card-one > p) {
   letter-spacing: -2.5px;
   font-weight: 550;
 }
+@media (max-width: 375px) {
+  #card-five p {
+    width: 100%;
+    font-size: calc(1.8rem + 0px);
+    line-height: calc(1.5rem + 0px);
+    letter-spacing: calc(-2.5px + 0.009rem);
+    font-weight: 550;
+  }
+}
 #card-five img {
   transform: scale(1.5);
   position: relative;
   top: 0.5rem;
   left: 25%;
   box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.05);
+}
+@media (max-width: 375px) {
+  #card-five img {
+    transform: scale(1);
+    left: 0;
+    top: 0;
+  }
 }
 
 #card-six {
@@ -270,12 +449,25 @@ p:not(#card-one > p) {
   overflow: hidden;
   background-color: hsl(39, 100%, 71%);
 }
+@media (max-width: 375px) {
+  #card-six {
+    margin-bottom: 4.5rem;
+  }
+}
 #card-six p {
   font-size: 1.5rem;
   line-height: 1.28rem;
   letter-spacing: -2.5px;
   font-weight: 500;
   width: 90%;
+}
+@media (max-width: 375px) {
+  #card-six p {
+    font-size: calc(1.8rem + 0px);
+    line-height: calc(1.5rem + 0px);
+    letter-spacing: calc(-2.5px + 0.009rem);
+    font-weight: 550;
+  }
 }
 #card-six img {
   width: 4.25rem;
@@ -285,6 +477,13 @@ p:not(#card-one > p) {
   left: calc(22% + 0.0625rem);
   top: 12%;
   border-radius: 0;
+}
+@media (max-width: 375px) {
+  #card-six img {
+    transform: scale(3.2);
+    top: -15%;
+    left: 23%;
+  }
 }
 
 #card-seven {
@@ -296,6 +495,13 @@ p:not(#card-one > p) {
   padding: 0.94rem;
   padding-right: 0;
   background-color: white;
+}
+@media (max-width: 375px) {
+  #card-seven {
+    padding: 1.5rem;
+    margin-top: 6.8rem;
+    margin-bottom: -2.3rem;
+  }
 }
 #card-seven p:nth-of-type(1) {
   font-size: 2.7rem;
@@ -315,8 +521,18 @@ p:not(#card-one > p) {
   width: 100%;
   letter-spacing: -0.02rem;
 }
+@media (max-width: 375px) {
+  #card-seven p:nth-of-type(2) {
+    font-size: 1.2rem;
+  }
+}
 #card-seven img {
   width: 80%;
+}
+@media (max-width: 375px) {
+  #card-seven img {
+    width: 60%;
+  }
 }
 
 #card-eight {
@@ -330,8 +546,24 @@ p:not(#card-one > p) {
   gap: 0.1rem;
   background-color: hsl(256, 67%, 59%);
 }
+@media (max-width: 375px) {
+  #card-eight {
+    margin-top: 4.5rem;
+    margin-bottom: -6.8rem;
+    padding: 1rem 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
 #card-eight img {
   width: 9.7rem;
+}
+@media (max-width: 375px) {
+  #card-eight img {
+    width: 100%;
+  }
 }
 #card-eight p {
   font-size: 1.7rem;
@@ -339,6 +571,15 @@ p:not(#card-one > p) {
   letter-spacing: calc(-2.5px + 0.05rem);
   font-weight: 500;
   color: white;
+}
+@media (max-width: 375px) {
+  #card-eight p {
+    text-align: center;
+    font-size: 1.8rem;
+    line-height: 1.5rem;
+    letter-spacing: calc(-2.5px + 0.1rem);
+    font-weight: 550;
+  }
 }
 
 @keyframes icon {
@@ -350,6 +591,8 @@ p:not(#card-one > p) {
   }
 }
 body {
+  width: 100%;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -357,12 +600,11 @@ body {
 }
 
 .container {
-  min-width: 724px;
-  width: 724px;
-  height: 596px;
+  max-width: 724px;
+  min-height: 90vh;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1.33fr 1fr 1fr;
+  grid-template-columns: repeat(4, 10.563rem);
+  grid-template-rows: 1.33fr 10.563rem 10.563rem;
   gap: 16px;
   grid-template-areas: "card-one card-two card-two card-three" "card-four card-five card-six card-three" "card-four card-seven card-eight card-eight";
 }
@@ -374,4 +616,65 @@ body {
   transform: scale(1.06);
   transition: transform 190ms ease-in-out;
   box-shadow: 0px 0px 20px 3px rgba(0, 0, 0, 0.05);
-}/*# sourceMappingURL=styles.css.map */
+}
+
+@media (561px <= width <= 746px) {
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin: 2rem auto;
+  }
+  .container {
+    width: 33.69rem;
+    height: 100%;
+    padding: 0;
+    grid-template-columns: repeat(3, 10.563rem);
+    grid-template-rows: 14.049rem 10.563rem 10.563rem 10.563rem;
+    gap: 1rem;
+    grid-template-areas: "card-two card-two card-three" "card-one card-five card-three" "card-four card-six card-seven" "card-four card-eight card-eight";
+  }
+}
+@media (376px <= width <= 560px) {
+  html {
+    overflow: visible;
+  }
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin: 2rem auto;
+  }
+  .container {
+    width: 22.13rem;
+    height: 100%;
+    padding: 0;
+    grid-template-columns: repeat(2, 10.563rem);
+    grid-template-rows: 14.049rem 10.563rem 10.563rem 10.563rem 10.563rem 10.563rem;
+    gap: 1rem;
+    grid-template-areas: "card-two card-two" "card-three card-three" "card-one card-five" "card-four card-six " "card-four card-seven" "card-eight card-eight";
+  }
+}
+@media (max-width: 375px) {
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  .container {
+    min-width: max(100vw, 375px);
+    height: 100%;
+    padding: 1rem;
+    margin-bottom: 1.2rem;
+    grid-template-columns: 1fr;
+    grid-template-rows: 18rem 9.5rem repeat(6, 18rem);
+    gap: 1rem;
+    grid-template-areas: "card-two" "card-five" "card-six" "card-three" "card-eight" "card-seven" "card-one" "card-four";
+  }
+  .card:hover {
+    transform: scale(1);
+  }
+} /*# sourceMappingURL=styles.css.map */

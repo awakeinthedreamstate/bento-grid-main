@@ -2,6 +2,8 @@
 @import "./cards";
 
 body {
+  width: 100%;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -12,12 +14,12 @@ body {
   * {
     border-radius: 10px;
   }
-  min-width: 724px;
-  width: 724px;
-  height: 596px;
+  //   min-width: 724px;
+  max-width: 724px;
+  min-height: 90vh;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1.33fr 1fr 1fr;
+  grid-template-columns: repeat(4, 10.563rem);
+  grid-template-rows: 1.33fr 10.563rem 10.563rem;
   gap: 16px;
   grid-template-areas:
     "card-one card-two card-two card-three"
@@ -29,4 +31,82 @@ body {
   transform: scale(1.06);
   transition: transform 190ms ease-in-out;
   box-shadow: 0px 0px 20px 3px rgba(0, 0, 0, 0.05);
+}
+
+@media (561px <= width <= 746px) {
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin: 2rem auto;
+  }
+  .container {
+    width: 33.69rem;
+    height: 100%;
+    padding: 0;
+    grid-template-columns: repeat(3, 10.563rem);
+    grid-template-rows: 14.049rem 10.563rem 10.563rem 10.563rem;
+    gap: 1rem;
+    grid-template-areas:
+      "card-two card-two card-three"
+      "card-one card-five card-three"
+      "card-four card-six card-seven"
+      "card-four card-eight card-eight";
+  }
+}
+
+@media (376px <= width <= 560px) {
+  html {
+    overflow: visible;
+  }
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin: 2rem auto;
+  }
+  .container {
+    width: 22.13rem;
+    height: 100%;
+    padding: 0;
+    grid-template-columns: repeat(2, 10.563rem);
+    grid-template-rows: 14.049rem 10.563rem 10.563rem 10.563rem 10.563rem 10.563rem;
+    gap: 1rem;
+    grid-template-areas:
+      "card-two card-two"
+      "card-three card-three"
+      "card-one card-five"
+      "card-four card-six "
+      "card-four card-seven"
+      "card-eight card-eight";
+  }
+}
+
+@media (max-width: 375px) {
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+
+    // padding-bottom: 1rem;
+    // padding-top: 1rem;
+  }
+  .container {
+    min-width: max(100vw, 375px);
+    height: 100%;
+    padding: 1rem;
+    //allowance for final card that overflows container
+    margin-bottom: 1.2rem;
+    grid-template-columns: 1fr;
+    grid-template-rows: 18rem 9.5rem repeat(6, 18rem);
+    gap: 1rem;
+    grid-template-areas: "card-two" "card-five" "card-six" "card-three" "card-eight" "card-seven" "card-one" "card-four";
+  }
+
+  .card:hover {
+    transform: scale(1);
+  }
 }
