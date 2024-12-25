@@ -22,7 +22,8 @@ Users should be able to:
 
 ### 📷 Screenshot
 
-![](./screenshot.jpg)
+![Screenshot 1](./screenshots/bento-grid-screenshot-1.png)
+![Screenshot 2](./screenshots/bento-grid-screenshot-2.png)
 
 ### 🔗 Links
 

@@ -665,7 +665,7 @@ body {
     height: 100%;
   }
   .container {
-    min-width: max(100vw, 375px);
+    min-width: max(90vw, 360px);
     height: 100%;
     padding: 1rem;
     margin-bottom: 1.2rem;
